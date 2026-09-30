@@ -1,0 +1,19 @@
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pg_pii_audit_db
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: pii_test_db
+    volumes:
+      - .:/workspace:z
+    command: >
+      bash -c "
+        make install &&
+        docker-entrypoint.sh postgres
+      "

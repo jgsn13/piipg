@@ -1,0 +1,16 @@
+# Build artifacts
+*.o
+*.so
+*.a
+*.bc
+*.pc
+/tmp/
+
+# PostgreSQL build outputs
+src/*.o
+src/*.bc
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
